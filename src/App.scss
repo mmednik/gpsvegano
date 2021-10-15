@@ -3,3 +3,16 @@
 body {
   padding-top: $pt-navbar-height;
 }
+
+a, a:hover {
+  color: $forest1;
+}
+
+div.stores {
+  display: flex;
+  flex-wrap: wrap;
+
+  & > .store {
+    flex: 1;
+  }
+}
