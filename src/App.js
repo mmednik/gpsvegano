@@ -24,7 +24,6 @@ function App() {
       );
       if (response) {
         setDocsData(response.results);
-        console.log(response.results);
       }
     };
     fetchData();
@@ -46,15 +45,14 @@ function App() {
       <main>
         <div className="stores">
           {docs ? (
-            docs.map(doc => (
-              <div>
-                <h1>{RichText.asText(doc.data.title)}</h1>
-                <img alt="cover" src={doc.data.image.url} />
-                <RichText
-                  render={doc.data.post_body}
-                  linkResolver={linkResolver}
-                />
-              </div>
+            docs.map((doc, i) => (
+              <Store
+                key={i}
+                title={RichText.asText(doc.data.title)}
+                img={doc.data.image.url}
+                body={RichText.asText(doc.data.post_body)}
+                link={linkResolver}
+              />
           ))
           ) : (
             <div>No content</div>

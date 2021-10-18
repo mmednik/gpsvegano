@@ -7,14 +7,13 @@ import {
 
 import "./Store.scss";
 
-function Store() {
+function Store({key, title, img, body, link}) {
   return (
-    <Card className="store" interactive={true} elevation={Elevation.ONE}>
+    <Card className="store" key={key} interactive={true} elevation={Elevation.ONE}>
       <h5>
-        <a href="link-to-store">Card heading</a>
+        <a href="link-to-store">{title}</a>
       </h5>
-      <p>Card content</p>
-      <Button>Submit</Button>
+      <p>{body}</p>
     </Card>
   );
 }
