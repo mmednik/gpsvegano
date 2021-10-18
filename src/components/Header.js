@@ -8,6 +8,8 @@ import {
   Button
 } from "@blueprintjs/core";
 
+import "./Header.scss";
+
 function Header() {
   return (
     <header>
