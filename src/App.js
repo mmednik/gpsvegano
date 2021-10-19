@@ -31,7 +31,7 @@ function App() {
   function linkResolver(doc) {
     // Define the url depending on the document type
     if (doc.type === "post") {
-      return "/post/" + doc.uid;
+      return "/store/" + doc.uid;
     }
 
     // Default to homepage
@@ -47,11 +47,12 @@ function App() {
             docs.map((doc, i) => (
               <Store
                 key={i}
+                index={i}
                 title={RichText.asText(doc.data.title)}
                 tag={doc.data.products}
                 img={doc.data.image.url}
                 body={RichText.asText(doc.data.post_body)}
-                link={linkResolver}
+                link={linkResolver(doc)}
                 type="list"
               />
           ))

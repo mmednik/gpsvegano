@@ -1,20 +1,20 @@
 import React from "react";
-import { Button, Card, Elevation } from "@blueprintjs/core";
+import { Card, Elevation } from "@blueprintjs/core";
 
 import "./Store.scss";
 
-function Store({ key, title, tag, img, body, link, type }) {
+function Store({ index, title, tag, img, body, link, type }) {
   switch (type) {
     case "list":
       return (
         <Card
           className="store"
-          key={key}
+          key={index}
           interactive={true}
           elevation={Elevation.ONE}
         >
           <h5>
-            <a href="link-to-store">{title}</a>
+            <a href={link}>{title}</a>
           </h5>
           <span>{tag}</span>
           <img src={img} alt={`Logo de ${title}`} />
@@ -26,7 +26,7 @@ function Store({ key, title, tag, img, body, link, type }) {
       return (
         <Card
           className="store"
-          key={key}
+          key={index}
           interactive={true}
           elevation={Elevation.ONE}
         >
