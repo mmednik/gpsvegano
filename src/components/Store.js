@@ -3,7 +3,7 @@ import { Button, Card, Elevation } from "@blueprintjs/core";
 
 import "./Store.scss";
 
-function Store({ key, title, img, body, link, type }) {
+function Store({ key, title, tag, img, body, link, type }) {
   switch (type) {
     case "list":
       return (
@@ -16,6 +16,7 @@ function Store({ key, title, img, body, link, type }) {
           <h5>
             <a href="link-to-store">{title}</a>
           </h5>
+          <span>{tag}</span>
           <img src={img} alt={`Logo de ${title}`} />
         </Card>
       );

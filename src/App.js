@@ -12,8 +12,7 @@ import "./App.scss";
 
 function App() {
   const apiEndpoint = "https://gpsvegano.cdn.prismic.io/api/v2";
-  const accessToken =
-    "MC5ZVzNZTWhBQUFCOEFZU3V6.DO-_ve-_ve-_ve-_vRDvv70Jfu-_vTTvv73vv706Ju-_ve-_vWpXVe-_vQ0677-977-977-9dO-_vXxnVu-_vQ";
+  const accessToken = process.env.REACT_APP_PRISMICACCESSTOKEN;
   const Client = Prismic.client(apiEndpoint, { accessToken });
   const [docs, setDocsData] = useState(null);
 
@@ -49,6 +48,7 @@ function App() {
               <Store
                 key={i}
                 title={RichText.asText(doc.data.title)}
+                tag={doc.data.products}
                 img={doc.data.image.url}
                 body={RichText.asText(doc.data.post_body)}
                 link={linkResolver}
