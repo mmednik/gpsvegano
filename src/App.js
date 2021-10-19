@@ -11,12 +11,12 @@ import Store from "./components/Store";
 import "./App.scss";
 
 function App() {
-  const apiEndpoint = "https://gpsvegano.cdn.prismic.io/api/v2";
-  const accessToken = process.env.REACT_APP_PRISMICACCESSTOKEN;
-  const Client = Prismic.client(apiEndpoint, { accessToken });
   const [docs, setDocsData] = useState(null);
 
   useEffect(() => {
+    const apiEndpoint = "https://gpsvegano.cdn.prismic.io/api/v2";
+    const accessToken = process.env.REACT_APP_PRISMICACCESSTOKEN;
+    const Client = Prismic.client(apiEndpoint, { accessToken });
     const fetchData = async () => {
       const response = await Client.query(
         Prismic.Predicates.at("document.type", "post")
@@ -55,7 +55,7 @@ function App() {
                 link={linkResolver(doc)}
                 type="list"
               />
-          ))
+            ))
           ) : (
             <div>No content</div>
           )}
