@@ -52,6 +52,7 @@ function App() {
                 img={doc.data.image.url}
                 body={RichText.asText(doc.data.post_body)}
                 link={linkResolver}
+                type="list"
               />
           ))
           ) : (
