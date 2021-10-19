@@ -15,7 +15,7 @@ function Store({ index, type }) {
         >
           <h5 className="bp3-skeleton">Store</h5>
           <span className="bp3-skeleton">Tag</span>
-          <img className="bp3-skeleton" />
+          <img className="bp3-skeleton" alt="Store image" />
         </Card>
       );
 
@@ -29,7 +29,7 @@ function Store({ index, type }) {
         >
           <h5 className="bp3-skeleton">Store</h5>
           <span className="bp3-skeleton">Tag</span>
-          <img className="bp3-skeleton" />
+          <img className="bp3-skeleton" alt="Store image" />
         </Card>
       );
   }
