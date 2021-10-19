@@ -6,6 +6,7 @@ import Prismic from "@prismicio/client";
 import { RichText } from "prismic-reactjs";
 
 import Header from "./components/Header";
+import StoreSkeleton from "./components/StoreSkeleton";
 import Store from "./components/Store";
 
 import "./App.scss";
@@ -57,7 +58,7 @@ function App() {
               />
             ))
           ) : (
-            <div>No content</div>
+            <StoreSkeleton index="1" type="list" />
           )}
         </div>
       </main>
