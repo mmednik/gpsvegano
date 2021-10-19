@@ -20,7 +20,6 @@ function Store({ index, title, tag, img, body, link, type }) {
           <img src={img} alt={`Logo de ${title}`} />
         </Card>
       );
-      break;
 
     default:
       return (
@@ -36,7 +35,6 @@ function Store({ index, title, tag, img, body, link, type }) {
           <p>{body}</p>
         </Card>
       );
-      break;
   }
 }
 
