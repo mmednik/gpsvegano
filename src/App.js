@@ -3,7 +3,7 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 
 import Prismic from "@prismicio/client";
-import { RichText } from "prismic-reactjs";
+import { RichText, Link } from "prismic-reactjs";
 
 import Header from "./components/Header";
 import StoreSkeleton from "./components/StoreSkeleton";
@@ -55,6 +55,13 @@ function App() {
                 body={RichText.asText(doc.data.post_body)}
                 link={linkResolver(doc)}
                 type="list"
+                offline={doc.data.offline_store}
+                delivery={doc.data.delivery}
+                web={Link.url(doc.data.web)}
+                instagram={Link.url(doc.data.instagram)}
+                facebook={Link.url(doc.data.facebook)}
+                phone={doc.data.phone}
+                email={doc.data.email}
               />
             ))
           ) : (
