@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import "@blueprintjs/core/lib/css/blueprint.css";
-import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 
 import Prismic from "@prismicio/client";
 import { RichText, Link } from "prismic-reactjs";

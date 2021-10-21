@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, Elevation, Tag } from "@blueprintjs/core";
 
 import "./Store.scss";
 
@@ -22,52 +21,50 @@ function Store({
 
   let offlineTag;
   if(offline) {
-    offlineTag = <Tag minimal={true}>Local</Tag>
+    offlineTag = <span>Local</span>
   }
 
   let deliveryTag;
   if(delivery) {
-    deliveryTag = <Tag minimal={true}>Delivery</Tag>
+    deliveryTag = <span>Delivery</span>
   }
 
   let webLink;
   if(web) {
-    webLink = <Tag minimal={true}>{web}</Tag>
+    webLink = <span>{web}</span>
   }
 
   let instagramLink;
   if(instagram) {
-    instagramLink = <Tag minimal={true}>{instagram}</Tag>
+    instagramLink = <span>{instagram}</span>
   }
 
   let facebookLink;
   if(facebook) {
-    facebookLink = <Tag minimal={true}>{facebook}</Tag>
+    facebookLink = <span>{facebook}</span>
   }
 
   let phoneLink;
   if(phone) {
-    phoneLink = <Tag minimal={true}>{phone}</Tag>
+    phoneLink = <span>{phone}</span>
   }
 
   let emailLink;
   if(email) {
-    emailLink = <Tag minimal={true}>{email}</Tag>
+    emailLink = <span>{email}</span>
   }
 
   switch (type) {
     case "list":
       return (
-        <Card
+        <div
           className="store"
           key={index}
-          interactive={true}
-          elevation={Elevation.ONE}
         >
           <div className="content">
             <a href={link}>
               <h5 className="title">{title}</h5>
-              <Tag minimal={true}>{tag}</Tag>
+              <span>{tag}</span>
               {offlineTag}
               {deliveryTag}
               {webLink}
@@ -84,22 +81,20 @@ function Store({
               />
             </a>
           </div>
-        </Card>
+        </div>
       );
 
     default:
       return (
-        <Card
+        <div
           className="store"
           key={index}
-          interactive={true}
-          elevation={Elevation.ONE}
         >
           <h5>
             <a href="link-to-store">{title}</a>
           </h5>
           <p>{body}</p>
-        </Card>
+        </div>
       );
   }
 }
