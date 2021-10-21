@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import { ChakraProvider } from "@chakra-ui/react";
+
 import Prismic from "@prismicio/client";
 import { RichText, Link } from "prismic-reactjs";
 
@@ -38,36 +40,38 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header />
-      <main>
-        <div className="stores">
-          {docs ? (
-            docs.map((doc, i) => (
-              <Store
-                key={i}
-                index={i}
-                title={RichText.asText(doc.data.title)}
-                tag={doc.data.products}
-                img={doc.data.image.url}
-                body={RichText.asText(doc.data.post_body)}
-                link={linkResolver(doc)}
-                type="list"
-                offline={doc.data.offline_store}
-                delivery={doc.data.delivery}
-                web={Link.url(doc.data.web)}
-                instagram={Link.url(doc.data.instagram)}
-                facebook={Link.url(doc.data.facebook)}
-                phone={doc.data.phone}
-                email={doc.data.email}
-              />
-            ))
-          ) : (
-            <StoreSkeleton index="1" type="list" />
-          )}
-        </div>
-      </main>
-    </div>
+    <ChakraProvider>
+      <div className="App">
+        <Header />
+        <main>
+          <div className="stores">
+            {docs ? (
+              docs.map((doc, i) => (
+                <Store
+                  key={i}
+                  index={i}
+                  title={RichText.asText(doc.data.title)}
+                  tag={doc.data.products}
+                  img={doc.data.image.url}
+                  body={RichText.asText(doc.data.post_body)}
+                  link={linkResolver(doc)}
+                  type="list"
+                  offline={doc.data.offline_store}
+                  delivery={doc.data.delivery}
+                  web={Link.url(doc.data.web)}
+                  instagram={Link.url(doc.data.instagram)}
+                  facebook={Link.url(doc.data.facebook)}
+                  phone={doc.data.phone}
+                  email={doc.data.email}
+                />
+              ))
+            ) : (
+              <StoreSkeleton index="1" type="list" />
+            )}
+          </div>
+        </main>
+      </div>
+    </ChakraProvider>
   );
 }
 
