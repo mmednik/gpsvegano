@@ -19,59 +19,24 @@ function Store({
   phone,
   email,
 }) {
-  let offlineTag;
-  if (offline) {
-    offlineTag = <span>Local</span>;
-  }
-
-  let deliveryTag;
-  if (delivery) {
-    deliveryTag = <span>Delivery</span>;
-  }
-
-  let webLink;
-  if (web) {
-    webLink = <span>{web}</span>;
-  }
-
-  let instagramLink;
-  if (instagram) {
-    instagramLink = <span>{instagram}</span>;
-  }
-
-  let facebookLink;
-  if (facebook) {
-    facebookLink = <span>{facebook}</span>;
-  }
-
-  let phoneLink;
-  if (phone) {
-    phoneLink = <span>{phone}</span>;
-  }
-
-  let emailLink;
-  if (email) {
-    emailLink = <span>{email}</span>;
-  }
-
   switch (type) {
     case "list":
       return (
         <Box p="5" maxW="320px" borderWidth="1px" data-link={link}>
           <Image borderRadius="md" src={img} alt={`Logo de ${title}`} />
           <Flex align="baseline" mt={2}>
-            <Badge colorScheme="pink">{tag}</Badge>
+            <Badge colorScheme="green">{tag}</Badge>
           </Flex>
           <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
             {title}
           </Text>
-          {offlineTag}
-          {deliveryTag}
-          {webLink}
-          {instagramLink}
-          {facebookLink}
-          {phoneLink}
-          {emailLink}
+          {offline && <span>Local</span>}
+          {delivery && <span>Delivery</span>}
+          {web && <span>{web}</span>}
+          {instagram && <span>{instagram}</span>}
+          {facebook && <span>{facebook}</span>}
+          {phone && <span>{phone}</span>}
+          {email && <span>{email}</span>}
         </Box>
       );
 
