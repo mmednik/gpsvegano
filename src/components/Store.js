@@ -6,9 +6,10 @@ import {
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa";
-import { Box, Image, Flex, Badge, Text } from "@chakra-ui/react";
+import { Box, Image, Flex, Badge, Text, Spacer } from "@chakra-ui/react";
 
 import "./Store.scss";
+import { Fragment } from "react/cjs/react.production.min";
 
 function Store({
   index,
@@ -29,8 +30,19 @@ function Store({
   switch (type) {
     case "list":
       return (
-        <Box boxSize="2xs" margin="2" padding="8" borderWidth="1px" data-link={link}>
-          <Image borderRadius="md" width="75px" src={img} alt={`Logo de ${title}`} />
+        <Box
+          boxSize="2xs"
+          margin="2"
+          padding="4"
+          borderWidth="1px"
+          data-link={link}
+        >
+          <Image
+            borderRadius="md"
+            width="100px"
+            src={img}
+            alt={`Logo de ${title}`}
+          />
           <Flex align="baseline" mt={2}>
             <Badge colorScheme="green">{tag}</Badge>
             {offline && <Badge colorScheme="blue">Local</Badge>}
@@ -41,29 +53,39 @@ function Store({
           </Text>
           <Flex align="baseline" mt={2}>
             {web && (
-              <a href={web} target="_blank">
-                <FaChrome />
-              </a>
+              <Box mr={2}>
+                <a href={web} target="_blank">
+                  <FaChrome size={28} />
+                </a>
+              </Box>
             )}
             {instagram && (
-              <a href={instagram} target="_blank">
-                <FaInstagram />
-              </a>
+              <Box mr={2}>
+                <a href={instagram} target="_blank">
+                  <FaInstagram size={28} />
+                </a>
+              </Box>
             )}
             {facebook && (
-              <a href={facebook} target="_blank">
-                <FaFacebook />
-              </a>
+              <Box mr={2}>
+                <a href={facebook} target="_blank">
+                  <FaFacebook size={28} />
+                </a>
+              </Box>
             )}
             {phone && (
-              <a href={`tel:+${phone}`} target="_blank">
-                <FaPhone />
-              </a>
+              <Box mr={2}>
+                <a href={`tel:+${phone}`} target="_blank">
+                  <FaPhone size={28} />
+                </a>
+              </Box>
             )}
             {email && (
-              <a href={`mailto:${email}`} target="_blank">
-                <FaEnvelope />
-              </a>
+              <Box mr={2}>
+                <a href={`mailto:${email}`} target="_blank">
+                  <FaEnvelope size={28} />
+                </a>
+              </Box>
             )}
           </Flex>
         </Box>
