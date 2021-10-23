@@ -40,11 +40,11 @@ function Store({
             {title}
           </Text>
           <Flex align="baseline" mt={2}>
-            {web && <FaChrome />}
-            {instagram && <FaInstagram />}
-            {facebook && <FaFacebook />}
-            {phone && <FaPhone />}
-            {email && <FaEnvelope />}
+            {web && <a href={web} target="_blank"><FaChrome /></a>}
+            {instagram && <a href={instagram} target="_blank"><FaInstagram /></a>}
+            {facebook && <a href={facebook} target="_blank"><FaFacebook /></a>}
+            {phone && <a href={`tel:+${phone}`} target="_blank"><FaPhone /></a>}
+            {email && <a href={`mailto:${email}`} target="_blank"><FaEnvelope /></a>}
           </Flex>
         </Box>
       );
