@@ -6,10 +6,9 @@ import {
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa";
-import { Box, Image, Flex, Badge, Text, Spacer } from "@chakra-ui/react";
+import { Box, Image, Flex, Badge, Text } from "@chakra-ui/react";
 
 import "./Store.scss";
-import { Fragment } from "react/cjs/react.production.min";
 
 function Store({
   index,
@@ -55,35 +54,35 @@ function Store({
           <Flex align="baseline" mt={2}>
             {web && (
               <Box mr={2}>
-                <a href={web} target="_blank">
+                <a href={web} target="_blank" rel="noreferrer">
                   <FaChrome size={28} />
                 </a>
               </Box>
             )}
             {instagram && (
               <Box mr={2}>
-                <a href={instagram} target="_blank">
+                <a href={instagram} target="_blank" rel="noreferrer">
                   <FaInstagram size={28} />
                 </a>
               </Box>
             )}
             {facebook && (
               <Box mr={2}>
-                <a href={facebook} target="_blank">
+                <a href={facebook} target="_blank" rel="noreferrer">
                   <FaFacebook size={28} />
                 </a>
               </Box>
             )}
             {phone && (
               <Box mr={2}>
-                <a href={`tel:+${phone}`} target="_blank">
+                <a href={`tel:+${phone}`} target="_blank" rel="noreferrer">
                   <FaPhone size={28} />
                 </a>
               </Box>
             )}
             {email && (
               <Box mr={2}>
-                <a href={`mailto:${email}`} target="_blank">
+                <a href={`mailto:${email}`} target="_blank" rel="noreferrer">
                   <FaEnvelope size={28} />
                 </a>
               </Box>
