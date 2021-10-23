@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Wrap } from "@chakra-ui/react";
 
 import Prismic from "@prismicio/client";
 import { RichText, Link } from "prismic-reactjs";
@@ -44,7 +44,7 @@ function App() {
       <div className="App">
         <Header />
         <main>
-          <div className="stores">
+          <Wrap>
             {docs ? (
               docs.map((doc, i) => (
                 <Store
@@ -68,7 +68,7 @@ function App() {
             ) : (
               <StoreSkeleton index="1" type="list" />
             )}
-          </div>
+          </Wrap>
         </main>
       </div>
     </ChakraProvider>

@@ -6,7 +6,7 @@ import {
   FaPhone,
   FaEnvelope,
 } from "react-icons/fa";
-import { Box, Image, Flex, Badge, Text } from "@chakra-ui/react";
+import { WrapItem, Box, Image, Flex, Badge, Text } from "@chakra-ui/react";
 
 import "./Store.scss";
 
@@ -29,24 +29,46 @@ function Store({
   switch (type) {
     case "list":
       return (
-        <Box p="5" maxW="320px" borderWidth="1px" data-link={link}>
-          <Image borderRadius="md" src={img} alt={`Logo de ${title}`} />
-          <Flex align="baseline" mt={2}>
-            <Badge colorScheme="green">{tag}</Badge>
-            {offline && <Badge colorScheme="blue">Local</Badge>}
-            {delivery && <Badge colorScheme="pink">Delivery</Badge>}
-          </Flex>
-          <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
-            {title}
-          </Text>
-          <Flex align="baseline" mt={2}>
-            {web && <a href={web} target="_blank"><FaChrome /></a>}
-            {instagram && <a href={instagram} target="_blank"><FaInstagram /></a>}
-            {facebook && <a href={facebook} target="_blank"><FaFacebook /></a>}
-            {phone && <a href={`tel:+${phone}`} target="_blank"><FaPhone /></a>}
-            {email && <a href={`mailto:${email}`} target="_blank"><FaEnvelope /></a>}
-          </Flex>
-        </Box>
+        <WrapItem>
+          <Box boxSize="xs" borderWidth="1px" data-link={link}>
+            <Image borderRadius="md" src={img} alt={`Logo de ${title}`} />
+            <Flex align="baseline" mt={2}>
+              <Badge colorScheme="green">{tag}</Badge>
+              {offline && <Badge colorScheme="blue">Local</Badge>}
+              {delivery && <Badge colorScheme="pink">Delivery</Badge>}
+            </Flex>
+            <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
+              {title}
+            </Text>
+            <Flex align="baseline" mt={2}>
+              {web && (
+                <a href={web} target="_blank">
+                  <FaChrome />
+                </a>
+              )}
+              {instagram && (
+                <a href={instagram} target="_blank">
+                  <FaInstagram />
+                </a>
+              )}
+              {facebook && (
+                <a href={facebook} target="_blank">
+                  <FaFacebook />
+                </a>
+              )}
+              {phone && (
+                <a href={`tel:+${phone}`} target="_blank">
+                  <FaPhone />
+                </a>
+              )}
+              {email && (
+                <a href={`mailto:${email}`} target="_blank">
+                  <FaEnvelope />
+                </a>
+              )}
+            </Flex>
+          </Box>
+        </WrapItem>
       );
 
     default:
