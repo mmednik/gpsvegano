@@ -64,7 +64,7 @@ function App() {
             />
           ))
         ) : (
-          <StoreSkeleton index="1" type="list" />
+          <StoreSkeleton type="list" />
         )}
       </Flex>
     </ChakraProvider>

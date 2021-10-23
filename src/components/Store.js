@@ -40,6 +40,7 @@ function Store({
           <Image
             borderRadius="md"
             width="100px"
+            height="100px"
             src={img}
             alt={`Logo de ${title}`}
           />

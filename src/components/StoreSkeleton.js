@@ -1,27 +1,22 @@
 import React from "react";
+import { Box, Flex } from "@chakra-ui/react";
+import { SkeletonCircle, SkeletonText } from "@chakra-ui/skeleton";
 
 import "./StoreSkeleton.scss";
 
-function Store({ index, type }) {
+function StoreSkeleton({ type }) {
   switch (type) {
     case "list":
       return (
-        <div
-          className="store"
-          key={index}
-        >
-          <h5 className="bp3-skeleton">Store</h5>
-          <span>Tag</span>
-          <img alt="Store skeleton" />
-        </div>
+        <Box boxSize="2xs" margin="2" padding="4" borderWidth="1px">
+          <SkeletonCircle width="100px" height="100px" mb={4} />
+          <SkeletonText noOfLines={4} />
+        </Box>
       );
 
     default:
       return (
-        <div
-          className="store"
-          key={index}
-        >
+        <div className="store">
           <h5>Store</h5>
           <span>Tag</span>
           <p>Sample</p>
@@ -30,4 +25,4 @@ function Store({ index, type }) {
   }
 }
 
-export default Store;
+export default StoreSkeleton;
