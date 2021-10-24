@@ -1,11 +1,12 @@
 import React from "react";
 import {
-  FaChrome,
-  FaInstagram,
-  FaFacebook,
-  FaPhone,
-  FaEnvelope,
-} from "react-icons/fa";
+  AiFillChrome,
+  AiFillInstagram,
+  AiFillFacebook,
+  AiFillPhone,
+  AiFillMail,
+  AiOutlineHeart,
+} from "react-icons/ai";
 import { Box, Image, Flex, Badge, Text } from "@chakra-ui/react";
 
 import "./Store.scss";
@@ -38,11 +39,6 @@ function Store({
           padding="4"
           data-link={link}
         >
-          <Flex align="baseline" mt={2}>
-            <Badge colorScheme="green">{tag}</Badge>
-            {offline && <Badge colorScheme="blue">Local</Badge>}
-            {delivery && <Badge colorScheme="pink">Delivery</Badge>}
-          </Flex>
           <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
             {title}
           </Text>
@@ -50,43 +46,51 @@ function Store({
             {web && (
               <Box mr={2}>
                 <a href={web} target="_blank" rel="noreferrer">
-                  <FaChrome size={28} />
+                  <AiFillChrome size={28} />
                 </a>
               </Box>
             )}
             {instagram && (
               <Box mr={2}>
                 <a href={instagram} target="_blank" rel="noreferrer">
-                  <FaInstagram size={28} />
+                  <AiFillInstagram size={28} />
                 </a>
               </Box>
             )}
             {facebook && (
               <Box mr={2}>
                 <a href={facebook} target="_blank" rel="noreferrer">
-                  <FaFacebook size={28} />
+                  <AiFillFacebook size={28} />
                 </a>
               </Box>
             )}
             {phone && (
               <Box mr={2}>
                 <a href={`tel:+${phone}`} target="_blank" rel="noreferrer">
-                  <FaPhone size={28} />
+                  <AiFillPhone size={28} />
                 </a>
               </Box>
             )}
             {email && (
               <Box mr={2}>
                 <a href={`mailto:${email}`} target="_blank" rel="noreferrer">
-                  <FaEnvelope size={28} />
+                  <AiFillMail size={28} />
                 </a>
               </Box>
             )}
           </Flex>
+          <Flex align="baseline" mt={2}>
+            <Badge colorScheme="green">{tag}</Badge>
+            {offline && <Badge colorScheme="blue">Local</Badge>}
+            {delivery && <Badge colorScheme="pink">Delivery</Badge>}
+          </Flex>
+          <Box position="absolute" right={4} top={6}>
+            <AiOutlineHeart size={24} />
+          </Box>
           <Image
             pos="absolute"
             right={4}
-            top={4}
+            bottom={4}
             borderRadius="full"
             boxShadow="lg"
             width={"50px"}
