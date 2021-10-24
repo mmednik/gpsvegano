@@ -30,19 +30,14 @@ function Store({
     case "list":
       return (
         <Box
-          boxSize="2xs"
+          pos="relative"
+          width="18rem"
+          height="8rem"
+          boxShadow="lg"
           margin="2"
           padding="4"
-          borderWidth="1px"
           data-link={link}
         >
-          <Image
-            borderRadius="md"
-            width="100px"
-            height="100px"
-            src={img}
-            alt={`Logo de ${title}`}
-          />
           <Flex align="baseline" mt={2}>
             <Badge colorScheme="green">{tag}</Badge>
             {offline && <Badge colorScheme="blue">Local</Badge>}
@@ -88,6 +83,17 @@ function Store({
               </Box>
             )}
           </Flex>
+          <Image
+            pos="absolute"
+            right={4}
+            top={4}
+            borderRadius="full"
+            boxShadow="lg"
+            width={"50px"}
+            height="50px"
+            src={img}
+            alt={`Logo de ${title}`}
+          />
         </Box>
       );
 
