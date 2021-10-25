@@ -5,7 +5,6 @@ import {
   AiFillFacebook,
   AiFillPhone,
   AiFillMail,
-  AiOutlineHeart,
 } from "react-icons/ai";
 import { Box, Image, Flex, Badge, Text } from "@chakra-ui/react";
 
@@ -32,8 +31,8 @@ function Store({
       return (
         <Box
           pos="relative"
-          width="18rem"
-          height="8rem"
+          width="20rem"
+          height="10rem"
           boxShadow="lg"
           margin="2"
           padding="4"
@@ -42,6 +41,7 @@ function Store({
           <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
             {title}
           </Text>
+          <Badge colorScheme="green">{tag}</Badge>
           <Flex align="baseline" mt={2}>
             {web && (
               <Box mr={2}>
@@ -80,21 +80,16 @@ function Store({
             )}
           </Flex>
           <Flex align="baseline" mt={2}>
-            <Badge colorScheme="green">{tag}</Badge>
-            {offline && <Badge colorScheme="blue">Local</Badge>}
-            {delivery && <Badge colorScheme="pink">Delivery</Badge>}
+            {offline && <Badge colorScheme="gray">Local</Badge>}
+            {delivery && <Badge colorScheme="gray">Delivery</Badge>}
           </Flex>
-          <Box position="absolute" right={4} top={6}>
-            <AiOutlineHeart size={24} />
-          </Box>
           <Image
             pos="absolute"
-            right={4}
-            bottom={4}
+            right={2}
+            top={4}
             borderRadius="full"
-            boxShadow="lg"
-            width={"50px"}
-            height="50px"
+            width={"75px"}
+            height="75px"
             src={img}
             alt={`Logo de ${title}`}
           />
