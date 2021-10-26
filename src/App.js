@@ -20,7 +20,8 @@ function App() {
     const Client = Prismic.client(apiEndpoint, { accessToken });
     const fetchData = async () => {
       const response = await Client.query(
-        Prismic.Predicates.at("document.type", "post")
+        Prismic.Predicates.at("document.type", "post"),
+        { orderings : '[document.last_publication_date desc]' }
       );
       if (response) {
         setDocsData(response.results);
