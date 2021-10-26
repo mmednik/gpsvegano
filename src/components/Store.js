@@ -31,7 +31,7 @@ function Store({
       return (
         <Box
           pos="relative"
-          width="20rem"
+          width="24rem"
           height="10rem"
           boxShadow="lg"
           margin="2"
@@ -46,35 +46,35 @@ function Store({
             {web && (
               <Box mr={2}>
                 <a href={web} target="_blank" rel="noreferrer">
-                  <AiFillChrome size={28} />
+                  <AiFillChrome size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
             {instagram && (
               <Box mr={2}>
                 <a href={instagram} target="_blank" rel="noreferrer">
-                  <AiFillInstagram size={28} />
+                  <AiFillInstagram size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
             {facebook && (
               <Box mr={2}>
                 <a href={facebook} target="_blank" rel="noreferrer">
-                  <AiFillFacebook size={28} />
+                  <AiFillFacebook size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
             {phone && (
               <Box mr={2}>
                 <a href={`tel:+${phone}`} target="_blank" rel="noreferrer">
-                  <AiFillPhone size={28} />
+                  <AiFillPhone size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
             {email && (
               <Box mr={2}>
                 <a href={`mailto:${email}`} target="_blank" rel="noreferrer">
-                  <AiFillMail size={28} />
+                  <AiFillMail size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
