@@ -30,10 +30,10 @@ function Store({
     case "list":
       return (
         <Box
+          className="store"
           pos="relative"
           width="24rem"
           height="10rem"
-          boxShadow="lg"
           margin="2"
           padding="4"
           data-link={link}

@@ -1,0 +1,15 @@
+.title {
+  background: #59c2ff;
+  background: -webkit-linear-gradient(to right, #59c2ff 0%, #ff61ea 100%);
+  background: -moz-linear-gradient(to right, #59c2ff 0%, #ff61ea 100%);
+  background: linear-gradient(to right, #59c2ff 0%, #ff61ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu {
+  svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
