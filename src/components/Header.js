@@ -10,6 +10,7 @@ function Header() {
       <Flex p={4}>
         <Heading>gpsVegano</Heading>
         <Spacer />
+       
         <Menu>
           <MenuButton
             as={IconButton}

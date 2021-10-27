@@ -13,22 +13,52 @@ import "./App.scss";
 
 function App() {
   const [docs, setDocsData] = useState(null);
+  const [lat, setLat] = useState(null);
+  const [lng, setLng] = useState(null);
+  const [geoStatus, setGeoStatus] = useState(null);
 
-  useEffect(() => {
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      setGeoStatus(false);
+    } else {
+      setGeoStatus(false);
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setGeoStatus(true);
+          setLat(position.coords.latitude);
+          setLng(position.coords.longitude);
+        },
+        () => {
+          setGeoStatus(false);
+        }
+      );
+    }
+  };
+
+  const fetchData = async () => {
+    let response;
     const apiEndpoint = "https://gpsvegano.cdn.prismic.io/api/v2";
     const accessToken = process.env.REACT_APP_PRISMICACCESSTOKEN;
     const Client = Prismic.client(apiEndpoint, { accessToken });
-    const fetchData = async () => {
-      const response = await Client.query(
-        Prismic.Predicates.at("document.type", "post"),
-        { orderings : '[document.last_publication_date desc]' }
+    if (geoStatus && lat && lng) {
+      response = await Client.query(
+        Prismic.Predicates.geopoint.near("my.post.geo", lat, lng, 10),
+        { orderings: "[document.last_publication_date desc]" }
       );
-      if (response) {
-        setDocsData(response.results);
-      }
-    };
+    } else {
+      response = await Client.query(
+        Prismic.Predicates.at("document.type", "post"),
+        { orderings: "[document.last_publication_date desc]" }
+      );
+    }
+    if (response) {
+      setDocsData(response.results);
+    }
+  };
+
+  useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   function linkResolver(doc) {
     // Define the url depending on the document type
@@ -43,6 +73,7 @@ function App() {
   return (
     <ChakraProvider>
       <Header />
+      <button onClick={getLocation}>Get Location</button>
       <Flex flexWrap="wrap" justifyContent="center">
         {docs ? (
           docs.map((doc, i) => (
