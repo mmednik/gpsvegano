@@ -4,9 +4,18 @@ import {
   AiFillInstagram,
   AiFillFacebook,
   AiFillPhone,
-  AiFillMail,
+  AiFillMail
 } from "react-icons/ai";
-import { Box, Image, Flex, Badge, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  Flex,
+  Badge,
+  Text,
+  Menu,
+  MenuButton,
+  IconButton,
+} from "@chakra-ui/react";
 
 import "./Store.scss";
 
@@ -30,10 +39,10 @@ function Store({
     case "list":
       return (
         <Box
-          className="store"
           pos="relative"
           width="24rem"
           height="10rem"
+          boxShadow="lg"
           margin="2"
           padding="4"
           data-link={link}
@@ -93,6 +102,16 @@ function Store({
             src={img}
             alt={`Logo de ${title}`}
           />
+          <Menu>
+            <MenuButton
+              className="menu"
+              border="0"
+              as={IconButton}
+              aria-label="Options"
+              icon={<AiFillChrome />}
+              variant="outline"
+            />
+          </Menu>
         </Box>
       );
 
