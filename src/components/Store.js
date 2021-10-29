@@ -4,7 +4,8 @@ import {
   AiFillInstagram,
   AiFillFacebook,
   AiFillPhone,
-  AiFillMail
+  AiFillMail,
+  AiOutlineMore,
 } from "react-icons/ai";
 import {
   Box,
@@ -13,6 +14,8 @@ import {
   Badge,
   Text,
   Menu,
+  MenuList,
+  MenuItem,
   MenuButton,
   IconButton,
 } from "@chakra-ui/react";
@@ -95,7 +98,7 @@ function Store({
           <Image
             pos="absolute"
             right={2}
-            top={4}
+            bottom={4}
             borderRadius="full"
             width={"75px"}
             height="75px"
@@ -105,12 +108,19 @@ function Store({
           <Menu>
             <MenuButton
               className="menu"
+              pos="absolute"
+              right={2}
+              top={4}
               border="0"
               as={IconButton}
               aria-label="Options"
-              icon={<AiFillChrome />}
+              icon={<AiOutlineMore />}
               variant="outline"
             />
+            <MenuList>
+              <MenuItem>Informar problema</MenuItem>
+              <MenuItem>Reportar local</MenuItem>
+            </MenuList>
           </Menu>
         </Box>
       );

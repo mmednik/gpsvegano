@@ -22,7 +22,7 @@ function Header() {
             className="menu"
             border="0"
             as={IconButton}
-            aria-label="Options"
+            aria-label="Main menu"
             icon={<AiOutlineMenu />}
             variant="outline"
           />
