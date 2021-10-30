@@ -10,6 +10,7 @@ import StoreSkeleton from "./components/StoreSkeleton";
 import Store from "./components/Store";
 
 import "./App.scss";
+import SearchBox from "./components/SearchBox";
 
 function App() {
   const [docs, setDocsData] = useState(null);
@@ -52,6 +53,7 @@ function App() {
   return (
     <ChakraProvider>
       <Header />
+      <SearchBox />
       <Flex flexWrap="wrap" justifyContent="center">
         {docs ? (
           docs.map((doc, i) => (
