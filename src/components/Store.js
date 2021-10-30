@@ -8,6 +8,8 @@ import {
   AiOutlineMore,
 } from "react-icons/ai";
 import {
+  LinkBox,
+  LinkOverlay,
   Box,
   Image,
   Flex,
@@ -41,7 +43,7 @@ function Store({
   switch (type) {
     case "list":
       return (
-        <Box
+        <LinkBox
           pos="relative"
           width="24rem"
           height="10rem"
@@ -50,9 +52,11 @@ function Store({
           padding="4"
           data-link={link}
         >
-          <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
-            {title}
-          </Text>
+          <LinkOverlay href="#">
+            <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
+              {title}
+            </Text>
+          </LinkOverlay>
           <Badge colorScheme="green">{tag}</Badge>
           <Flex align="baseline" mt={2}>
             {web && (
@@ -122,7 +126,7 @@ function Store({
               <MenuItem>Reportar local</MenuItem>
             </MenuList>
           </Menu>
-        </Box>
+        </LinkBox>
       );
 
     default:
