@@ -100,7 +100,7 @@ function Store({
             right={2}
             bottom={4}
             borderRadius="full"
-            width={"75px"}
+            width="75px"
             height="75px"
             src={img}
             alt={`Logo de ${title}`}

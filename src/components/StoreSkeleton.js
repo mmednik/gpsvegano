@@ -8,9 +8,23 @@ function StoreSkeleton({ type }) {
   switch (type) {
     case "list":
       return (
-        <Box boxSize="2xs" margin="2" padding="4" borderWidth="1px">
-          <SkeletonCircle width="100px" height="100px" mb={4} />
+        <Box
+          pos="relative"
+          width="24rem"
+          height="10rem"
+          boxShadow="lg"
+          margin="2"
+          padding="4"
+        >
           <SkeletonText noOfLines={4} />
+          <SkeletonCircle
+            pos="absolute"
+            right={2}
+            bottom={4}
+            borderRadius="full"
+            width="75px"
+            height="75px"
+          />
         </Box>
       );
 

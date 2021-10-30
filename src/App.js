@@ -14,6 +14,7 @@ import SearchBox from "./components/SearchBox";
 
 function App() {
   const [docs, setDocsData] = useState(null);
+  const [search, setSearch] = useState("comida");
   
   const fetchData = async () => {
     let response;
@@ -28,6 +29,7 @@ function App() {
     } else {*/
       response = await Client.query(
         Prismic.Predicates.at("document.type", "post"),
+        // Prismic.Predicates.fulltext("document", search),
         { orderings: "[document.last_publication_date desc]" }
       );
     /*}*/
