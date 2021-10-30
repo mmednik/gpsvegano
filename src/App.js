@@ -5,16 +5,17 @@ import { ChakraProvider, Flex } from "@chakra-ui/react";
 import Prismic from "@prismicio/client";
 import { RichText, Link } from "prismic-reactjs";
 
+import "./App.scss";
+
 import Header from "./components/Header";
 import StoreSkeleton from "./components/StoreSkeleton";
 import Store from "./components/Store";
-
-import "./App.scss";
 import SearchBox from "./components/SearchBox";
+import BottomNav from "./components/BottomNav";
 
 function App() {
   const [docs, setDocsData] = useState(null);
-  const [search, setSearch] = useState("comida");
+  // const [search, setSearch] = useState("comida");
   
   const fetchData = async () => {
     let response;
@@ -81,6 +82,7 @@ function App() {
           <StoreSkeleton type="list" />
         )}
       </Flex>
+      <BottomNav />
     </ChakraProvider>
   );
 }
