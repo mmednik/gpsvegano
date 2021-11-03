@@ -6,7 +6,7 @@ import "./SearchBox.scss";
 
 function SearchBox() {
   return (
-    <Flex padding="4">
+    <Flex mt={12} padding={4}>
       <Input placeholder="Buscar local..." />
       <IconButton aria-label="Search database" icon={<AiOutlineSearch />} />
     </Flex>
