@@ -1,9 +1,19 @@
+.header {
+  height: 100px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 60%
+  );
+}
+
 .title {
   background: #59c2ff;
   background: -webkit-linear-gradient(to right, #59c2ff 0%, #ff61ea 100%);
   background: -moz-linear-gradient(to right, #59c2ff 0%, #ff61ea 100%);
   background: linear-gradient(to right, #59c2ff 0%, #ff61ea 100%);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 

@@ -14,7 +14,14 @@ import "./Header.scss";
 function Header() {
   return (
     <header>
-      <Flex p={4} pos="fixed" top="0" w="100vw">
+      <Flex
+        p={4}
+        pos="fixed"
+        top="0"
+        w="100vw"
+        className="header"
+        zIndex="sticky"
+      >
         <Heading className="title">gpsVegano</Heading>
         <Spacer />
         <Menu>
