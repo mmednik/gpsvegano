@@ -1,12 +1,12 @@
 import React from "react";
 import {
-  AiFillChrome,
-  AiFillInstagram,
-  AiFillFacebook,
-  AiFillPhone,
-  AiFillMail,
-  AiOutlineMore,
-} from "react-icons/ai";
+  IoLogoChrome,
+  IoLogoInstagram,
+  IoLogoFacebook,
+  IoCall,
+  IoMail,
+  IoEllipsisVertical,
+} from "react-icons/io5";
 import {
   LinkBox,
   LinkOverlay,
@@ -62,35 +62,35 @@ function Store({
             {web && (
               <Box mr={2}>
                 <a href={web} target="_blank" rel="noreferrer">
-                  <AiFillChrome size={32} color="#2D3748" />
+                  <IoLogoChrome size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
             {instagram && (
               <Box mr={2}>
                 <a href={instagram} target="_blank" rel="noreferrer">
-                  <AiFillInstagram size={32} color="#2D3748" />
+                  <IoLogoInstagram size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
             {facebook && (
               <Box mr={2}>
                 <a href={facebook} target="_blank" rel="noreferrer">
-                  <AiFillFacebook size={32} color="#2D3748" />
+                  <IoLogoFacebook size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
             {phone && (
               <Box mr={2}>
                 <a href={`tel:+${phone}`} target="_blank" rel="noreferrer">
-                  <AiFillPhone size={32} color="#2D3748" />
+                  <IoCall size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
             {email && (
               <Box mr={2}>
                 <a href={`mailto:${email}`} target="_blank" rel="noreferrer">
-                  <AiFillMail size={32} color="#2D3748" />
+                  <IoMail size={32} color="#2D3748" />
                 </a>
               </Box>
             )}
@@ -118,12 +118,12 @@ function Store({
               border="0"
               as={IconButton}
               aria-label="Options"
-              icon={<AiOutlineMore />}
+              icon={<IoEllipsisVertical />}
               variant="outline"
             />
             <MenuList>
               <MenuItem>Informar problema</MenuItem>
-              <MenuItem>Reportar local</MenuItem>
+              <MenuItem color="red">Reportar local</MenuItem>
             </MenuList>
           </Menu>
         </LinkBox>

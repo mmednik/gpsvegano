@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Flex, Spacer, Link } from "@chakra-ui/react";
-import { AiOutlineBarcode, AiFillShop, AiOutlineBars } from "react-icons/ai";
+import { IoBarcode, IoStorefront, IoList } from "react-icons/io5";
 
 import "./BottomNav.scss";
 
@@ -17,15 +17,15 @@ function BottomNav() {
     >
       <Flex mx={8}>
         <Link>
-          <AiOutlineBarcode className="bottom-icon" />
+          <IoBarcode className="bottom-icon" />
         </Link>
         <Spacer />
         <Link>
-          <AiFillShop className="bottom-icon" color="green" />
+          <IoStorefront className="bottom-icon" color="#ff61ea" />
         </Link>
         <Spacer />
         <Link>
-          <AiOutlineBars className="bottom-icon" />
+          <IoList className="bottom-icon" />
         </Link>
       </Flex>
     </Box>

@@ -7,7 +7,7 @@ import {
   MenuButton,
   IconButton,
 } from "@chakra-ui/react";
-import { AiOutlineMenu } from "react-icons/ai";
+import { IoMenu } from "react-icons/io5";
 
 import "./Header.scss";
 
@@ -30,7 +30,7 @@ function Header() {
             border="0"
             as={IconButton}
             aria-label="Main menu"
-            icon={<AiOutlineMenu />}
+            icon={<IoMenu />}
             variant="outline"
           />
         </Menu>
