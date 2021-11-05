@@ -10,7 +10,7 @@ function BottomNav() {
       className="bottom-nav"
       bgColor="white"
       pos="fixed"
-      bottom="0"
+      bottom="-1px"
       width="100%"
       height="50px"
       p={2}
