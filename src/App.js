@@ -4,6 +4,7 @@ import { ChakraProvider, Flex } from "@chakra-ui/react";
 
 import Prismic from "@prismicio/client";
 import { RichText, Link } from "prismic-reactjs";
+import { prismicApiEndpoint, prismicAccessToken } from './prismic-configuration';
 
 import "./App.scss";
 
@@ -19,8 +20,8 @@ function App() {
   
   const fetchData = async () => {
     let response;
-    const apiEndpoint = "https://gpsvegano.cdn.prismic.io/api/v2";
-    const accessToken = process.env.REACT_APP_PRISMICACCESSTOKEN;
+    const apiEndpoint = prismicApiEndpoint;
+    const accessToken = prismicAccessToken;
     const Client = Prismic.client(apiEndpoint, { accessToken });
  /*   if (geoStatus && lat && lng) {
       response = await Client.query(
