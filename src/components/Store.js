@@ -52,7 +52,7 @@ function Store({
           padding="4"
           data-link={link}
         >
-          <LinkOverlay href="#">
+          <LinkOverlay href={link}>
             <Text mt={2} fontSize="xl" fontWeight="semibold" lineHeight="short">
               {title}
             </Text>
