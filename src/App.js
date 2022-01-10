@@ -4,7 +4,11 @@ import { ChakraProvider, Flex } from "@chakra-ui/react";
 
 import Prismic from "@prismicio/client";
 import { RichText, Link } from "prismic-reactjs";
-import { prismicApiEndpoint, prismicAccessToken } from './prismic-configuration';
+import {
+  prismicApiEndpoint,
+  prismicAccessToken,
+  linkResolver
+} from "./prismic-configuration";
 
 import "./App.scss";
 
@@ -16,43 +20,22 @@ import BottomNav from "./components/BottomNav";
 
 function App() {
   const [docs, setDocsData] = useState(null);
-  // const [search, setSearch] = useState("comida");
-  
+
   const fetchData = async () => {
     let response;
     const apiEndpoint = prismicApiEndpoint;
     const accessToken = prismicAccessToken;
     const Client = Prismic.client(apiEndpoint, { accessToken });
- /*   if (geoStatus && lat && lng) {
-      response = await Client.query(
-        Prismic.Predicates.geopoint.near("my.post.geo", lat, lng, 10),
-        { orderings: "[document.last_publication_date desc]" }
-      );
-    } else {*/
-      response = await Client.query(
-        Prismic.Predicates.at("document.type", "post"),
-        // Prismic.Predicates.fulltext("document", search),
-        { orderings: "[document.last_publication_date desc]" }
-      );
-    /*}*/
+    response = await Client.query(
+      Prismic.Predicates.at("document.type", "post"),
+      { orderings: "[document.last_publication_date desc]" }
+    );
     if (response) {
       setDocsData(response.results);
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  });
-
-  function linkResolver(doc) {
-    // Define the url depending on the document type
-    if (doc.type === "post") {
-      return "/store/" + doc.uid;
-    }
-
-    // Default to homepage
-    return "/";
-  }
+  fetchData();
 
   return (
     <ChakraProvider>
